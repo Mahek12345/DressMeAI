@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Cart
+        {% endblock title %}
+{% block body %}
+<div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1>Search Products</h1>
+          <form action="{% url 'search_results' %}" method="GET">
+            <div class="form-group">
+              <label for="search_query">Search:</label>
+              <input type="text" class="form-control" name="search_query" placeholder="Enter search query">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+        {% endblock body %}
+ 

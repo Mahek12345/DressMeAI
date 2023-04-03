@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block body %} 
+
+ <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Search Products</h1>
+      <form action="search" method="GET">
+        <div class="form-group">
+          <label for="search_query">search:</label>
+          <input type="text" class="form-control" name="search_query" placeholder="Enter search query">
+          
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
+</div> 
+ 
+
+<h1>{{search_results}}</h1>
+       {% endblock body %} 
