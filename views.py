@@ -5,7 +5,6 @@ import pandas as pd
 
 # Create your views here.
 from datetime import datetime
-# from Shop.models import Contact
 
 
 # Create your views here.
@@ -25,15 +24,7 @@ def about(request):
 
 def contact(request):
 
-    # if request.method == "POST":
-    #     Fname = request.POST.get('Fname')
-    #     Lname = request.POST.get('Lname')
-    #     email = request.POST.get('email')
-    #     phone = request.POST.get('phone')
-    #     text = request.POST.get('text')
 
-    # contact_obj = Contact(Fname= Fname, Lname = Lname,email = email , phone  = phone, text = text)
-    # contact_obj.save()
 
     return render(request, 'contact.html')
 
@@ -49,7 +40,6 @@ def order(request):
 def search(request):
     if request.method == 'GET':
         search_query = "Colour:green"
-        # search_query = request.GET.get('search_query')
         search = request.GET.get('search_query')
 
         if search_query is None:
@@ -71,10 +61,8 @@ def search(request):
         knn_model.fit(tfidf_matrix)
         print(search_query)
         search_query = search
-        # search_query = query
         terms = str(search_query).split(':')
 
-        # terms = search_query.split(':')
         name_term = ''
         colour_term = ''
         price_term = ''
@@ -117,7 +105,6 @@ def search(request):
             search_results.append(image_url)
             # print(search_results)
 
-            # context = {'search_query': search_query, 'search_results': search_results}
             context = {'search_results': search_results}
 
         # return render(request, 'search_results.html', context)
